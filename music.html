@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music test 02</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="playScale()">연주 시작</button>
+<script>
+  function playScale() {
+    const synth = new Tone.Synth().toDestination();
+    const now = Tone.now();
+
+
+    const notes = ["G4", "G4", "A4", "G4", "C4", "B4"
+                 , "G4", "G4", "A4", "G4" , "D4", "C5"
+                 , "G4", "G4", "G4", "E4" , "C4", "B4","A4"
+                 , "F4", "F4", "E4", "C4" , "D4", "C4"
+                 ,  "G4", "G4", "A4", "G4", "C4", "B4"
+                 , "G4", "G4", "A4", "G4" , "D4", "C5"
+                 , "G4", "G4", "G4", "E4" , "C4", "B4","A4"
+                 , "F4", "F4", "E4", "C4" , "D4", "C4"
+                 ,"G4", "G4", "A4", "G4", "C4", "B4"
+                 , "G4", "G4", "A4", "G4" , "D4", "C5"
+                 , "G4", "G4", "G4", "E4" , "C4", "B4","A4"
+                  , "F4", "F4", "E4", "C4" , "D4", "C4"
+                 ,  "G4", "G4", "A4", "G4", "C4", "B4"
+                 , "G4", "G4", "A4", "G4" , "D4", "C5"
+                , "G4", "G4", "G4", "E4" , "C4", "B4","A4"
+                , "F4", "F4", "E4", "C4" , "D4", "C4"];
+    notes.forEach((note, index) => {
+      synth.triggerAttackRelease(note, "8n", now + index * 0.5);
+    });
+  }
+</script>
+</body>
+</html>
